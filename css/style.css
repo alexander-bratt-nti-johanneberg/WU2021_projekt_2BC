@@ -3,7 +3,7 @@
 }
 
 body {
-    background-image: url(/img/help1.jpg);
+    background: linear-gradient(lightblue,black);
     background-size: cover;
 }
 
@@ -30,7 +30,7 @@ body {
         grid-area: he;
     }
 
-    .nav {
+    #nav {
         grid-area: na;
         background-color: rgba(192, 192, 192, 0.6);
         position: sticky;
@@ -67,8 +67,14 @@ body {
     }
 
     #s1 {
+        display: flex;
         grid-area: s1;
         background-color: rgba(192, 192, 192, 0.6);
+    }
+
+    #karta {
+        justify-self: center;
+
     }
     
     #s2 {
@@ -98,8 +104,11 @@ body {
 
 }
 
-@media screen and (min-width:768px) and (max-width:1023px) {
-    .GridWrapperMobile {
+@media screen and (max-width:1023px) {
+    .GridWrapper {
+    display: grid;
+    height: 600vh;
+    width: 100%;
     grid-template-areas: 
     "na na"
     "he he"
@@ -111,7 +120,69 @@ body {
     "fo fo"
     
     ;
+    grid-template-rows: 1% auto auto auto auto auto auto 5%;
+    grid-template-columns: repeat(2, 1fr);
     }
 
+    #nav {
+        grid-area: na;
+        background-color: rgba(192, 192, 192, 0.6);
+        position: sticky;
+        top: 0;
+    }
+
+    ul {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    li {
+        float: left;
+    }
+
+    li > a {
+        display: block;
+        color: whitesmoke;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 25px;
+    }
+
+    li > a:hover {
+        background-color: black;
+    }
+
+    #s1 {
+        grid-area: s1;
+        background-color: rgba(192, 192, 192, 0.6);
+    }
+    
+    #s2 {
+        grid-area: s2;
+        background-color: rgba(192, 192, 192, 0.6);
+    }
+    
+    #s3 {
+        grid-area: s3;
+        background-color: rgba(192, 192, 192, 0.6);
+    }
+    
+    #s4 {
+        grid-area: s4;
+        background-color: rgba(192, 192, 192, 0.6);
+    }
+    
+    #s5 {
+        grid-area: s5;
+        background-color: rgba(192, 192, 192, 0.6);
+    }
+
+    #footer {
+        grid-area: fo;
+        background-color: rgba(192, 192, 192, 0.6);
+    }
 }
 
