@@ -1,17 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
 * {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
 }
 
-body {
-    background-image: url(/img/help1.jpg);
-    background-size: cover;
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
 }
 
 @media screen and (min-width:1024px) {
     .GridWrapper {
     display: grid;
-    height: 600vh;
-    width: 100%;
     grid-template-areas:
     "na na na na na"
     "he he he he he"
@@ -19,18 +22,322 @@ body {
     "s2 s2 s2 s2 s2"
     "s3 s3 s3 s3 s3"
     "s4 s4 s4 s4 s4"
-    "s5 s5 s5 s5 s5"
     "fo fo fo fo fo"
     ;
-    grid-template-rows: 1% auto auto auto auto auto auto 5%;
+    grid-template-rows: auto 100vh auto auto auto auto auto;
     grid-template-columns: repeat(5, 1fr);
     }
 
-    #header {
-        grid-area: he;
+    #startbild {
+        max-width: 60vw;
+        margin: 3rem 3rem 3rem 0;
     }
 
-    .nav {
+    #menyknapp {
+        display: none;
+    }
+
+    #header {
+        display: flex;
+        grid-area: he;
+        background-color: #0B5267;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    #header > div > h1 {
+        max-width: 40vw;
+        font-size: 5em;
+        text-transform: uppercase;
+    }
+
+    #header > div > p {
+        display: flex;
+        font-size: 3em;
+        justify-content: center;
+        text-transform: uppercase;
+    }
+
+
+    #nav {
+        grid-area: na;
+        background-color: #204B62;
+        position: sticky;
+        top: 0;
+    }
+
+    ul {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        justify-content: flex-end;
+    }
+    
+    li {
+        float: left;
+    }
+
+    li > a {
+        display: block;
+        color: whitesmoke;
+        text-align: center;
+        padding: 30px 40px;
+        text-decoration: none;
+        font-size: 25px;
+    }
+
+    li > a:hover {
+        background-color: black;
+    }
+
+    ul > li > #left {
+        display: flex;
+        justify-content: right;
+    }
+
+    #s1 {
+        display: flex;
+        grid-area: s1;
+        background-color: #128383;
+        padding: 2rem;
+    }
+
+    #om_oss {
+        display: flex;
+        background-color: white;
+        margin: 1.5rem;
+        width: 90vw;
+        height: 40vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #om_oss > p {
+        text-align: center;
+        line-height: 1.7;
+        max-width: 70ch;
+        margin-bottom: 2rem;
+    }
+
+    #om_oss > h2 {
+        margin-bottom: 1.5rem;
+    }
+
+    #om_oss > h2 {
+        color:#128383;
+    }
+
+    #knapp_om_oss {
+        padding: 1rem 2rem;
+        display: inline-block;
+        color: #128383;
+        border: 0.1rem #128383 solid;
+        border-radius: 2rem;
+        transition: color 0.4s ease;
+    }
+
+    #knapp_om_oss:hover {
+        background-color: #128383;
+        color: white;
+        cursor: pointer;
+    }
+    
+    #s3 {
+        padding: 2rem;
+        display: flex;
+        grid-area: s3;
+        background-color: #0B5267;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #div1_s3 {
+        margin-top: 1rem;
+        color: white;
+    }
+
+    #div2_s3 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        max-width: 90vw;
+    }
+
+    #div_div2_s3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: larger;
+    }
+    
+    #div_div2_s3 > p {
+        max-width: 65ch;
+        text-align: center;
+    }
+
+    
+    #div_div2_s3 > h3 {
+        margin: 10px;
+    }
+    
+    #div3_s3 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        max-width: 90vw;
+    }
+
+    #div_div3_s3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: larger;
+    }
+
+    #div_div3_s3 > p {
+        max-width: 65ch;
+        text-align: center;
+    }
+
+    #div_div3_s3 > h3 {
+        margin: 10px;
+    }
+
+    #bild1_s3 {
+        margin:3rem 0 3rem 3rem;
+        height: 50vh;
+
+    }
+
+    #bild2_s3 {
+        margin: 3rem 3rem 3rem 0;
+        height: 50vh;
+    }
+
+    #s4 {
+        padding: 1rem;
+        display: flex;
+        grid-area: s4;
+        background-color: #204B62;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    #s4 > div {
+        margin: 1rem;
+    }
+
+    .price_pic {
+        height: 35vh;
+    }
+
+    .price_pic:hover {
+        filter: alpha(opacity=80);
+        opacity: .6;       
+        cursor: pointer;
+    }
+
+    .bigdiv_kop {
+        border: 0.3rem white solid;
+    }
+
+    .div_kop {
+        padding: 1rem;
+    }
+
+    .rubrik_kop {
+        border-bottom: 0.2rem white solid;
+        padding-bottom: 1rem;
+        color: white;
+    }
+
+    .text_kop {
+        color: white;
+        padding: 3rem 0;
+    }
+
+    .knapp_kop {
+        display: inline-block;
+        padding: 1rem;
+        background-color: #132d3b;
+        color: white;
+    }
+
+    .knapp_kop:hover {
+        background-color: #09161d;
+        cursor: pointer;
+    }
+
+    #footer {
+        padding: 2rem;
+        display: flex;
+        grid-area: fo;
+        background-color:#128383;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #div_div_footer {
+        display: flex;
+        background-color: white;
+        height: 42vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #div_div_footer > h2 {
+        color: #128383;
+        font-size: 3.5rem;
+        margin-bottom: 2vh;
+    }
+
+    #div_div_footer > p {
+        margin-bottom: 2vh;
+    }
+
+
+
+    #karta {
+        width: 90vw;
+        height: 42vh;
+    }
+
+}
+
+@media screen and (max-width:1023px) {
+    .GridWrapper {
+    display: grid;
+    height: 600vh;
+    width: 100%;
+    grid-template-areas: 
+    "na na"
+    "he he"
+    "s1 s1"
+    "s2 s2"
+    "s3 s3"
+    "s4 s4"
+    "s5 s5"
+    "fo fo"
+    
+    ;
+    grid-template-rows: 1% auto auto auto auto auto auto 5%;
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+    #nav {
         grid-area: na;
         background-color: rgba(192, 192, 192, 0.6);
         position: sticky;
@@ -59,11 +366,6 @@ body {
 
     li > a:hover {
         background-color: black;
-    }
-
-    ul > li > #left {
-        display: flex;
-        justify-content: right;
     }
 
     #s1 {
@@ -96,22 +398,6 @@ body {
         background-color: rgba(192, 192, 192, 0.6);
     }
 
-}
-
-@media screen and (min-width:768px) and (max-width:1023px) {
-    .GridWrapperMobile {
-    grid-template-areas: 
-    "na na"
-    "he he"
-    "s1 s1"
-    "s2 s2"
-    "s3 s3"
-    "s4 s4"
-    "s5 s5"
-    "fo fo"
-    
-    ;
-    }
 
 }
 
