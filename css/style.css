@@ -21,7 +21,6 @@ html {
     "s1 s1 s1 s1 s1"
     "s2 s2 s2 s2 s2"
     "s3 s3 s3 s3 s3"
-    "s4 s4 s4 s4 s4"
     "fo fo fo fo fo"
     ;
     grid-template-rows: auto 100vh auto auto auto auto auto;
@@ -29,11 +28,11 @@ html {
     }
 
     #startbild {
-        max-width: 60vw;
+        max-width: 100%;
         margin: 3rem 3rem 3rem 0;
     }
 
-    #menyknapp {
+    .menyknapp {
         display: none;
     }
 
@@ -47,7 +46,8 @@ html {
     }
 
     #header > div > h1 {
-        max-width: 40vw;
+        max-width: 100%;
+        width: 100%;
         font-size: 5em;
         text-transform: uppercase;
     }
@@ -65,6 +65,10 @@ html {
         background-color: #204B62;
         position: sticky;
         top: 0;
+    }
+
+    .active {
+        background-color: #183849;
     }
 
     ul {
@@ -89,7 +93,7 @@ html {
     }
 
     li > a:hover {
-        background-color: black;
+        background-color: #09161d;
     }
 
     ul > li > #left {
@@ -145,22 +149,22 @@ html {
         cursor: pointer;
     }
     
-    #s3 {
+    #s2 {
         padding: 2rem;
         display: flex;
-        grid-area: s3;
+        grid-area: s2;
         background-color: #0B5267;
         justify-content: center;
         flex-direction: column;
         align-items: center;
     }
 
-    #div1_s3 {
+    #div1_s2 {
         margin-top: 1rem;
         color: white;
     }
 
-    #div2_s3 {
+    #div2_s2 {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -169,7 +173,7 @@ html {
         max-width: 90vw;
     }
 
-    #div_div2_s3 {
+    #div_div2_s2 {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -177,17 +181,17 @@ html {
         font-size: larger;
     }
     
-    #div_div2_s3 > p {
+    #div_div2_s2 > p {
         max-width: 65ch;
         text-align: center;
     }
 
     
-    #div_div2_s3 > h3 {
+    #div_div2_s2 > h3 {
         margin: 10px;
     }
     
-    #div3_s3 {
+    #div3_s2 {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -196,7 +200,7 @@ html {
         max-width: 90vw;
     }
 
-    #div_div3_s3 {
+    #div_div3_s2 {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -204,42 +208,51 @@ html {
         font-size: larger;
     }
 
-    #div_div3_s3 > p {
+    #div_div3_s2 > p {
         max-width: 65ch;
         text-align: center;
     }
 
-    #div_div3_s3 > h3 {
+    #div_div3_s2 > h3 {
         margin: 10px;
     }
 
-    #bild1_s3 {
+    #bild1_s2 {
         margin:3rem 0 3rem 3rem;
         height: 50vh;
 
     }
 
-    #bild2_s3 {
+    #bild2_s2 {
         margin: 3rem 3rem 3rem 0;
         height: 50vh;
     }
 
-    #s4 {
+    #s3 {
         padding: 1rem;
         display: flex;
-        grid-area: s4;
+        grid-area: s3;
         background-color: #204B62;
         justify-content: center;
         align-items: center;
         flex-direction: row;
     }
 
-    #s4 > div {
+    #biggerdiv_kop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        max-width: 90vw;
+    }
+
+    #s3 > div > div {
         margin: 1rem;
     }
 
     .price_pic {
-        height: 35vh;
+        height: auto;
+        width: 100%;
     }
 
     .price_pic:hover {
@@ -272,6 +285,7 @@ html {
         padding: 1rem;
         background-color: #132d3b;
         color: white;
+        border: 0.1rem white solid;
     }
 
     .knapp_kop:hover {
@@ -318,30 +332,87 @@ html {
 }
 
 @media screen and (max-width:1023px) {
+    
     .GridWrapper {
     display: grid;
-    height: 600vh;
     width: 100%;
     grid-template-areas: 
-    "na na"
+    "mb mb"
     "he he"
     "s1 s1"
     "s2 s2"
     "s3 s3"
-    "s4 s4"
-    "s5 s5"
     "fo fo"
     
     ;
-    grid-template-rows: 1% auto auto auto auto auto auto 5%;
+    grid-template-rows: auto auto auto auto auto auto;
     grid-template-columns: repeat(2, 1fr);
     }
-
-    #nav {
-        grid-area: na;
-        background-color: rgba(192, 192, 192, 0.6);
-        position: sticky;
+    
+    .menyknapp {
+        display: flex;
+        grid-area: mb;
+        background-color: #204B62;
+        position: fixed;
         top: 0;
+        justify-content: flex-end;
+    }
+
+    #startbild {
+        margin: 1rem;
+        height: 25vh;
+    }
+
+    #header {
+        display: flex;
+        grid-area: he;
+        background-color: #0B5267;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #header > div > p {
+        text-align: center;
+        margin: 1rem;
+    }
+
+    nav {
+        display: flex;
+        position: fixed;
+        height: 100vh;
+        width: 45vw;
+        background: #204B62;
+        top: 0;
+        right: -100vw;
+        transition: right 0.3s;
+        box-shadow: 10px 0px 21px -10px rgba(0, 0, 0, 0.75);
+        z-index: 10;
+        overflow: hidden;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .show {
+        right: 0;
+    }
+
+    .fade_layer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 5;
+    }
+
+    .visible {
+        display: block;
     }
 
     ul {
@@ -362,40 +433,182 @@ html {
         padding: 14px 16px;
         text-decoration: none;
         font-size: 25px;
+        border-bottom: 0.2rem black solid;
     }
 
     li > a:hover {
-        background-color: black;
+        color: black;
     }
 
     #s1 {
+        display: flex;
         grid-area: s1;
-        background-color: rgba(192, 192, 192, 0.6);
+        background-color: #128383;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    #om_oss {
+        display: flex;
+        background-color: white;
+        width: 90vw;
+        height: 40vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #om_oss > p {
+        text-align: center;
+        max-width: 65ch;
+        font-size: 0.7em;
+        margin: 1rem;
     }
     
+    #knapp_om_oss {
+        padding: 1rem 2rem;
+        display: inline-block;
+        color: #128383;
+        border: 0.1rem #128383 solid;
+        border-radius: 2rem;
+        transition: color 0.4s ease;
+    }
+
+    #knapp_om_oss:hover {
+        background-color: #128383;
+        color: white;
+        cursor: pointer;
+    }
+
     #s2 {
         grid-area: s2;
-        background-color: rgba(192, 192, 192, 0.6);
+        background-color: #0B5267;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #div1_s2 {
+        margin: 1rem;
+        color: white;
+    }
+
+    #div_div2_s2 > p {
+        color: white;
+        margin: 1rem;
+        max-width: 65ch;
+    }
+
+    #div_div2_s2 > h3 {
+        color: white;
+        margin: 1rem;
+    }
+
+    #div_div3_s2 > p {
+        color: white;
+        margin: 1rem;
+        max-width: 65ch;
+    }
+
+    
+    #div_div3_s2 > h3 {
+        color: white;
+        margin: 1rem;
+    }
+
+    #bild1_s2 {
+        height: 35vh;
+    }
+
+    #bild2_s2 {
+        display: none;
     }
     
     #s3 {
         grid-area: s3;
-        background-color: rgba(192, 192, 192, 0.6);
+        background-color: #204B62;
+        padding: 2rem;
     }
-    
-    #s4 {
-        grid-area: s4;
-        background-color: rgba(192, 192, 192, 0.6);
+
+    .price_pic {
+        height: auto;
+        width: 100%;
     }
-    
-    #s5 {
-        grid-area: s5;
-        background-color: rgba(192, 192, 192, 0.6);
+
+    .price_pic:hover {
+        filter: alpha(opacity=80);
+        opacity: .6;       
+        cursor: pointer;
+    }
+
+    .bigdiv_kop {
+        border: 0.3rem white solid;
+        margin: 1rem;
+    }
+
+    .div_kop {
+        padding: 1rem;
+    }
+
+    .rubrik_kop {
+        border-bottom: 0.2rem white solid;
+        padding-bottom: 1rem;
+        color: white;
+    }
+
+    .text_kop {
+        color: white;
+        padding: 3rem 0;
+    }
+
+    .knapp_kop {
+        display: inline-block;
+        padding: 1rem;
+        background-color: #132d3b;
+        color: white;
+        border: 0.1rem white solid;
+    }
+
+    .knapp_kop:hover {
+        background-color: #09161d;
+        cursor: pointer;
     }
 
     #footer {
+        padding: 1rem;
+        display: flex;
         grid-area: fo;
-        background-color: rgba(192, 192, 192, 0.6);
+        background-color:#128383;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #div_div_footer {
+        display: flex;
+        background-color: white;
+        height: 42vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #div_div_footer > h2 {
+        color: #128383;
+        font-size: 2rem;
+        margin-bottom: 2vh;
+    }
+
+    #div_div_footer > p {
+        margin-bottom: 2vh;
+    }
+
+    #karta {
+        width: 90vw;
+        height: 42vh;
     }
 
 
