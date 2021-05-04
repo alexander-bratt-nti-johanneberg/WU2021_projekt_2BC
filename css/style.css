@@ -21,6 +21,7 @@ html {
     "s1 s1 s1 s1 s1"
     "s2 s2 s2 s2 s2"
     "s3 s3 s3 s3 s3"
+    "s4 s4 s4 s4 s4"
     "fo fo fo fo fo"
     ;
     grid-template-rows: auto 100vh auto auto auto auto;
@@ -311,6 +312,56 @@ html {
         cursor: pointer;
     }
 
+    #s4 {
+        display: flex;
+        grid-area: s4;
+        background-color: #0B5267;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    #div_s4 {
+        display: flex;
+        background-color: white;
+        margin: 1.5rem;
+        width: 90vw;
+        height: 80vh;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    #text_div_s4 {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+    }
+
+    #text_div_s4 > h2 {
+        text-align: center;
+        font-size: 3rem;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    #text_div_s4 > p{
+        text-align: start;
+        line-height: 1.7;
+        max-width: 70ch;
+        margin-top: 1rem;
+        max-height: 100%;
+    }
+
+    #img_div_s4{
+        margin-left: 2rem;
+        margin: 1rem;
+        max-width: 45vw;
+    }
+
+    #img_s4 {
+        width: 100%;
+    }
+
     #footer {
         padding: 2rem;
         display: flex;
@@ -360,6 +411,7 @@ html {
     "s1 s1"
     "s2 s2"
     "s3 s3"
+    "s4 s4"
     "fo fo"
     
     ;
@@ -627,6 +679,56 @@ html {
     .knapp_kop:hover {
         background-color: #09161d;
         cursor: pointer;
+    }
+
+    #s4 {
+        display: flex;
+        grid-area: s4;
+        background-color: #0B5267;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    #div_s4 {
+        display: flex;
+        background-color: white;
+        margin: 1.5rem;
+        width: 90vw;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #text_div_s4 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #text_div_s4 > h2 {
+        text-align: center;
+        font-size: 2rem;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    #text_div_s4 > p{
+        text-align: start;
+        line-height: 1.7;
+        max-width: 65ch;
+        font-size: 0.7em;
+        margin: 1rem;
+        max-height: 100%;
+    }
+    
+    #img_div_s4{
+        margin-left: 2rem;
+        margin: 1rem;
+        max-width: 45vw;
+    }
+
+    #img_s4 {
+        width: 100%;
     }
 
     #footer {
